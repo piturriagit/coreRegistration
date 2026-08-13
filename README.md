@@ -22,7 +22,7 @@ Correo electrónico (input tipo email).
 - [ ] Valida que el correo electrónico no esté ya registrado antes de insertarlo.
 - [ ] Muestra una lista de usuarios registrados en la misma página o en una página separada.
 
-Modo de entrega:
+## Modo de entrega:
 Envía un archivo comprimido con los siguientes elementos.
 1. Un archivo HTML con el formulario de registro.
 2. Un archivo PHP (registrar.php) que procese el formulario y guarde los datos en la base de datos.
