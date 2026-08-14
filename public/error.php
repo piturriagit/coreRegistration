@@ -46,11 +46,11 @@ $message = $errorMessages[$error] ?? 'Ocurrió un error desconocido.';
     </header>
 
     <main>
-        <h1>
+        <h1 id="title"><span aria-hidden="true">⚠️</span>
             <?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>
         </h1>
 
-        <p>
+        <p id="descripcion">
             <?= $message ?>
         </p>
 
