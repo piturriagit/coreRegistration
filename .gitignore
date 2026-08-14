@@ -22,3 +22,4 @@ application/logs/*
 
 # macOS
 screenshots/
+tests/features/__pycache__/
