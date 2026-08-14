@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    http_response_code(405);
+    header('Allow: GET');
+    exit('Method Not Allowed');
+}
+
 $host = '127.0.0.1';
 $dbname = 'usuarios_db';
 $username = 'admin';
@@ -50,9 +56,10 @@ try {
 <body>
 
     <header>
-        <a href="home.html" class="site-name">
-            Registro de Usuarios en una Base de Datos
+        <a href="home.html" aria-label="Go to homepage">
+            <img src="logo.png" alt="" class="site-logo">
         </a>
+        <span class="site-name">Registro de Usuarios en una Base de Datos</span>
     </header>
 
     <main class="users-container">

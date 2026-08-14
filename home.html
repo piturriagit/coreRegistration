@@ -14,9 +14,10 @@
 </head>
 <body>
     <header>
-        <a href="home.html" class="site-name">
-            Registro de Usuarios en una Base de Datos
+        <a href="home.html" aria-label="Go to homepage">
+            <img src="logo.png" alt="" class="site-logo">
         </a>
+        <span class="site-name">Registro de Usuarios en una Base de Datos</span>
     </header>
 
     <main>

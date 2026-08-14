@@ -37,6 +37,11 @@ header {
 
     background-color: var(--primary-color-light);
     border-bottom: 3px solid var(--secondary-color);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
 }
 
 header h1 {
@@ -45,16 +50,28 @@ header h1 {
     font-size: 1.5rem;
 }
 
+header a {
+    display: inline-flex;
+    align-items: center;
+}
+
+header a:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.site-logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
 .site-name {
     color: var(--primary-color);
     font-size: 1.25rem;
     font-weight: 700;
-    text-decoration: none;
-}
-
-.site-name:focus-visible {
-    outline: 3px solid var(--secondary-color);
-    outline-offset: 4px;
 }
 
 /* Form container */
