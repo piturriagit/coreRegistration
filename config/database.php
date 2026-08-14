@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_types=1);
+
+$host = getenv('DB_HOST');
+$dbname = getenv('DB_NAME');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
+
+if (
+    $host === false ||
+    $dbname === false ||
+    $username === false ||
+    $password === false
+) {
+    throw new RuntimeException(
+        'Database environment variables are not configured.'
+    );
+}
+
+$pdo = new PDO(
+    "mysql:host={$host};dbname={$dbname};charset=utf8mb4",
+    $username,
+    $password,
+    [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]
+);

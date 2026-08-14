@@ -1,3 +1,28 @@
+<?php
+
+declare(strict_types=1);
+
+$error = $_GET['error'] ?? 'unknown';
+$email = $_GET['email'] ?? '';
+
+$errorTitles = [
+    'db_environment' => 'Error de configuración de la base de datos',
+    'db_connection'  => 'Error de conexión a la base de datos',
+    'db_query'       => 'Error en la consulta a la base de datos',
+    'email_exists'   => 'Email en uso',
+];
+
+$errorMessages = [
+    'db_environment' => 'Las variables de entorno de la base de datos no están configuradas.',
+    'db_connection'  => 'No se pudo conectar a la base de datos.',
+    'db_query'       => 'Ocurrió un error al ejecutar la consulta a la base de datos.',
+    'email_exists'   => 'Ya existe un usuario con este correo electrónico' . ($email ? ': <br>&emsp;<em>' . $email . '</em>' : '.') . '<br>Por favor, elige otro correo electrónico.',
+];
+
+$title = $errorTitles[$error] ?? 'Error';
+$message = $errorMessages[$error] ?? 'Ocurrió un error desconocido.';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,12 +46,12 @@
     </header>
 
     <main>
-
-        <h1><span aria-hidden="true">❗</span> Este email ya está en uso</h1>
+        <h1>
+            <?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>
+        </h1>
 
         <p>
-            Ya existe un usuario con email <em><?= htmlspecialchars($_GET['email'] ?? 'default@example.com', ENT_QUOTES, 'UTF-8') ?></em>. <br>
-            Por favor, elige otro correo electrónico.
+            <?= $message ?>
         </p>
 
         <a class="button" href="usuarios.php">

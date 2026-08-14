@@ -8,35 +8,22 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit('Method Not Allowed');
 }
 
-$host = '127.0.0.1';
-$dbname = 'usuarios_db';
-$username = 'admin';
-$password = 'admin@123';
-
 try {
-    $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
-        $username,
-        $password,
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ]
-    );
+    require_once __DIR__ . '/../config/database.php';
 
     $nombre = trim($_POST['nombre'] ?? '');
     $email = trim($_POST['email'] ?? '');
 
     if ($nombre === '' || $email === '') {
-        http_response_code(400);
-        exit('Invalid data');
+        header('Location: error.php?error=db_query');
+        exit;
     }
 
     /* Check if user with the same email already exists in the database */
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        http_response_code(400);
-        exit('Invalid email');
+        header('Location: error.php?error=db_query');
+        exit;
     }
 
         $stmt = $pdo->prepare(
@@ -51,7 +38,7 @@ try {
     ]);
 
     if ($stmt->fetch()) {
-        header('Location: error.php?email=' . urlencode($email));
+        header('Location: error.php?error=email_exists&email=' . urlencode($email));
         exit;
     }
 
@@ -70,7 +57,10 @@ try {
     header('Location: success.html');
     exit;
 
+} catch (RuntimeException $e) {
+    header('Location: error.php?error=db_environment');
+    exit;
 } catch (PDOException $e) {
-    http_response_code(500);
-    echo 'Database connection failed: ' . $e->getMessage();
+    header('Location: error.php?error=db_connection');
+    exit;
 }

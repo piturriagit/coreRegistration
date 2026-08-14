@@ -8,21 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     exit('Method Not Allowed');
 }
 
-$host = '127.0.0.1';
-$dbname = 'usuarios_db';
-$username = 'admin';
-$password = 'admin@123';
-
 try {
-    $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
-        $username,
-        $password,
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ]
-    );
+    require_once __DIR__ . '/../config/database.php';
 
     $stmt = $pdo->query(
         'SELECT id, nombre, email
@@ -32,9 +19,12 @@ try {
 
     $users = $stmt->fetchAll();
 
+} catch (RuntimeException $e) {
+    header('Location: error.php?error=db_environment');
+    exit;
 } catch (PDOException $e) {
-    http_response_code(500);
-    echo 'Database connection failed: ' . $e->getMessage();
+    header('Location: error.php?error=db_connection');
+    exit;
 }
 
 ?>
