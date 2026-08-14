@@ -10,10 +10,10 @@ id (INT, AUTO_INCREMENT, PRIMARY KEY)
 nombre (VARCHAR 100)
 email (VARCHAR 100)
 2. Formulario HTML:
-- [ ] Crea un formulario HTML con dos campos:
+- [x] Crea un formulario HTML con dos campos:
 Nombre (input tipo texto).
 Correo electrónico (input tipo email).
-- [ ] El formulario debe enviar los datos a un script PHP usando el método POST.
+- [x] El formulario debe enviar los datos a un script PHP usando el método POST.
 3. Script PHP (registrar.php):
 - [ ] Conecta a la base de datos MySQL usando PHP.
 - [ ] Recibe los datos del formulario (nombre y email).
