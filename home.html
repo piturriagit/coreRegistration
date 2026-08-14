@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuarios</title>
+    <meta name="description" content="Deberás crear un sistema simple de registro de usuarios. Los usuarios podrán ingresar su nombre y correo electrónico a través de un formulario HTML, y estos datos se almacenarán en una base de datos MySQL utilizando PHP">
+    <meta name="keywords" content="registro, mvc, php, html, sql, corenetworks, caso práctico, base de datos">
+    <meta name="author" content="Patricia">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Registro de Usuarios en una Base de Datos</h1>
+    </header>
+
+    <main>
+
+        <form method="POST" action="/usuarios">
+            <div class="form-group">
+                <label for="nombre">Nombre de usuario:</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    maxlength="100"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    maxlength="255"
+                >
+            </div>
+        
+            <button type="submit">Guardar</button>
+        </form>
+    </main>
+
+</body>
+</html>
