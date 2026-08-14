@@ -21,7 +21,7 @@ Correo electrónico (input tipo email).
 - [x] Muestra un mensaje de éxito o error después de la inserción.
 4. Funcionalidad Adicional (Opcional):
 - [ ] Valida que el correo electrónico no esté ya registrado antes de insertarlo.
-- [ ] Muestra una lista de usuarios registrados en la misma página o en una página separada.
+- [x] Muestra una lista de usuarios registrados en la misma página o en una página separada.
 
 ## Modo de entrega:
 Envía un archivo comprimido con los siguientes elementos.
