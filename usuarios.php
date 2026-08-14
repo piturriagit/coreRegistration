@@ -48,11 +48,14 @@ try {
 <body>
 
     <header>
-        <h1>Registro de Usuarios en una Base de Datos</h1>
+        <a href="home.html" class="site-name">
+            Registro de Usuarios en una Base de Datos
+        </a>
     </header>
 
     <main class="users-container">
 
+        <h1>Lista de usuarios</h1>
         <?php if (count($users) === 0): ?>
 
             <p class="empty-message">
