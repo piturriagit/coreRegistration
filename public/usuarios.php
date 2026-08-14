@@ -47,9 +47,9 @@ try {
     <meta name="description" content="Deberás crear un sistema simple de registro de usuarios. Los usuarios podrán ingresar su nombre y correo electrónico a través de un formulario HTML, y estos datos se almacenarán en una base de datos MySQL utilizando PHP">
     <meta name="keywords" content="registro, mvc, php, html, sql, corenetworks, caso práctico, base de datos">
     <meta name="author" content="Patricia">
-    <link rel="icon" href="favicon32.png" type="image/png" sizes="32x32">
-    <link rel="icon" href="favicon48.png" type="image/png" sizes="48x48">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/favicon32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="assets/images/favicon48.png" type="image/png" sizes="48x48">
+    <link rel="stylesheet" href="assets/css/style.css">
     
 </head>
 
@@ -57,7 +57,7 @@ try {
 
     <header>
         <a href="home.html" aria-label="Go to homepage">
-            <img src="logo.png" alt="" class="site-logo">
+            <img src="assets/images/logo.png" alt="" class="site-logo">
         </a>
         <span class="site-name">Registro de Usuarios en una Base de Datos</span>
     </header>
