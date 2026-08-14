@@ -15,10 +15,10 @@ Nombre (input tipo texto).
 Correo electrónico (input tipo email).
 - [x] El formulario debe enviar los datos a un script PHP usando el método POST.
 3. Script PHP (registrar.php):
-- [ ] Conecta a la base de datos MySQL usando PHP.
-- [ ] Recibe los datos del formulario (nombre y email).
-- [ ] Inserta los datos en la tabla usuarios.
-- [ ] Muestra un mensaje de éxito o error después de la inserción.
+- [x] Conecta a la base de datos MySQL usando PHP.
+- [x] Recibe los datos del formulario (nombre y email).
+- [x] Inserta los datos en la tabla usuarios.
+- [x] Muestra un mensaje de éxito o error después de la inserción.
 4. Funcionalidad Adicional (Opcional):
 - [ ] Valida que el correo electrónico no esté ya registrado antes de insertarlo.
 - [ ] Muestra una lista de usuarios registrados en la misma página o en una página separada.
