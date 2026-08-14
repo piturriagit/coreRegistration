@@ -19,7 +19,7 @@ CREATE TABLE usuarios (
     email VARCHAR(100) NOT NULL UNIQUE
 );
 
--- $mysql -h localhost -u admin -p usuarios_db
+-- $ /usr/local/mysql/bin/mysql -h localhost -u admin -p usuarios_db
 -- mysql> show databases;
 -- +--------------------+
 -- | Database           |
