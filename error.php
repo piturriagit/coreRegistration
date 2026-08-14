@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de usuarios - éxito</title>
+    <title>Registro de usuarios - error</title>
     <meta name="description" content="Deberás crear un sistema simple de registro de usuarios. Los usuarios podrán ingresar su nombre y correo electrónico a través de un formulario HTML, y estos datos se almacenarán en una base de datos MySQL utilizando PHP">
     <meta name="keywords" content="registro, mvc, php, html, sql, corenetworks, caso práctico, base de datos">
     <meta name="author" content="Patricia">
@@ -21,10 +21,11 @@
 
     <main>
 
-        <h1><span aria-hidden="true">ℹ️</span> Usuario creado correctamente</h1>
+        <h1><span aria-hidden="true">❗</span> Este email ya está en uso</h1>
 
         <p>
-            Tu cuenta de usuario ha sido añadida a la base de datos.
+            Ya existe un usuario con email <em><?= htmlspecialchars($_GET['email'] ?? 'default@example.com', ENT_QUOTES, 'UTF-8') ?></em>. <br>
+            Por favor, elige otro correo electrónico.
         </p>
 
         <a class="button" href="usuarios.php">

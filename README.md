@@ -20,7 +20,7 @@ Correo electrónico (input tipo email).
 - [x] Inserta los datos en la tabla usuarios.
 - [x] Muestra un mensaje de éxito o error después de la inserción.
 4. Funcionalidad Adicional (Opcional):
-- [ ] Valida que el correo electrónico no esté ya registrado antes de insertarlo.
+- [x] Valida que el correo electrónico no esté ya registrado antes de insertarlo.
 - [x] Muestra una lista de usuarios registrados en la misma página o en una página separada.
 
 ## Modo de entrega:

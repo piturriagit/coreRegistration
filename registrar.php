@@ -32,10 +32,30 @@ try {
         exit('Invalid data');
     }
 
+    /* Check if user with the same email already exists in the database */
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
         exit('Invalid email');
     }
+
+        $stmt = $pdo->prepare(
+        'SELECT id
+         FROM usuarios
+         WHERE email = :email
+         LIMIT 1'
+    );
+
+    $stmt->execute([
+        'email' => $email,
+    ]);
+
+    if ($stmt->fetch()) {
+        header('Location: error.php?email=' . urlencode($email));
+        exit;
+    }
+
+    /* Insert the new user into the database */
 
     $stmt = $pdo->prepare(
         'INSERT INTO usuarios (nombre, email)
