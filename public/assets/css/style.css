@@ -16,13 +16,17 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    margin: 0;
+html {
     min-height: 100%;
 }
 
 body {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.5;
     color: var(--text-color);
@@ -80,6 +84,7 @@ main {
     max-width: 480px;
     margin: 2rem auto;
     padding: 1.5rem;
+    flex: 1;
 
     display: flex;
     flex-direction: column;
@@ -237,6 +242,44 @@ tbody tr:hover {
 .empty-message {
     margin: 0 0 1.5rem;
     text-align: center;
+}
+
+footer {
+    width: 100%;
+    padding: 1.5rem 1rem;
+
+    text-align: center;
+
+    background-color: var(--primary-color-light);
+    border-top: 3px solid var(--secondary-color);
+}
+
+footer p {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--text-color);
+}
+
+footer a:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+    border-radius: 3px;
 }
 
 /* Responsive layout */

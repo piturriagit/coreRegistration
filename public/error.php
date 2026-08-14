@@ -62,6 +62,15 @@ $message = $errorMessages[$error] ?? 'Ocurrió un error desconocido.';
             Crear otro usuario
         </a>
     </main>
+    <footer>
+        <p>
+            &copy; <script>let year = document.write(new Date().getFullYear());year?year:2026;</script> Registro de Usuarios
+        </p>
 
+        <nav aria-label="Footer navigation">
+            <a href="https://github.com/piturriagit/coreRegistration">Github</a>
+            <a href="mailto:iturriaga.patricia@icloud.com?subject=%5BcoreRegistration%5D%20">Contact</a>
+        </nav>
+    </footer>
 </body>
 </html>
